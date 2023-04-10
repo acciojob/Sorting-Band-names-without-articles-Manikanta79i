@@ -1,11 +1,8 @@
- const bands = ["The Beatles", "Adele", "The Rolling Stones", "Elton John", "Nirvana", "Led Zeppelin", "The Who", "Pink Floyd"];
+const bands = ["The Beatles", "Adele", "The Rolling Stones", "Elton John", "Nirvana", "Led Zeppelin", "The Who", "Pink Floyd"];
 
-      // function to strip articles from band names
-      function strip(bandName) {
-        return bandName.replace(/^(a |an |the )/i, "").trim();
-      }
+function strip(bandName) {
+  return bandName.replace(/^(a |an |the )/i, "").trim();
+}
 
-      // sort the band names and display them in ul list
-      const sortedBands = bands.sort((a, b) => strip(a) > strip(b) ? 1 : -1);
-      document.querySelector("#bands").innerHTML = sortedBands.map(band => `<li>${band}</li>`).join("");
-
+const sortedBands = bands.sort((a, b) => strip(a) > strip(b) ? 1 : -1);
+document.querySelector("#bands").innerHTML = sortedBands.map(band => `<li>${band}</li>`).join("");
